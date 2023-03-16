@@ -1,0 +1,5 @@
+- [ ] [VSCode笔记指南](https://zhuanlan.zhihu.com/p/366596949)
+- [ ] [计算机第零课](https://orangex4.cool/post/lesson-zero-for-cs-students/)
+- [ ] [ VS Code Latex环境搭建](https://zhuanlan.zhihu.com/p/199268436)
+- [ ] [别人的笔记云端](https://notes.orangex4.cool/) 
+- [ ] [甘特图每日计划]()
