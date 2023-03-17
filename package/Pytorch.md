@@ -13,11 +13,11 @@ N-Batch(批)
 C-Channel
 H-Height
 W-Width
-![](D:/VSCode\blog_picture\NCHW.png)
+![](../..\blog_picture\NCHW.png)
 
 **逻辑表达上是4D数据**
 在物理存储时，都是按照1D来存储的
-![](D:/VSCode\blog_picture\NCHW-physical.png)
+![](../..\blog_picture\NCHW-physical.png)
 
 
 NCHW是先取W方向数据，再取H方向，再C方向，最后N方向
@@ -25,7 +25,7 @@ NCHW是先取W方向数据，再取H方向，再C方向，最后N方向
 NHWC是先取C方向，然后W方向，再H方向，最后N方向
 
 以RGB图像为例
-![](D:/VSCode\blog_picture\RGB-nchw.png)
+![](../..\blog_picture\RGB-nchw.png)
 
 ### tensor.mean()
 可以计算不同维度的均值
@@ -289,7 +289,7 @@ Tensor Processing Unit ,中文名为张量处理器，2015年谷歌在IO开发�
 截止目前，谷歌已经发行了四代TPU芯片
 
 芯片架构设计如下
-![](D:/VSCode\blog_picture\tpu.png)
+![](../..\blog_picture\tpu.png)
 
 整个TPU之中最重要的计算单元是矩阵乘单元:“Matrix Multiply Unit”，它可以在单个时钟周期中处理数十万次矩阵运算(Matrix),MMU有着与传统CPU、GPU截然不同的结构，称为脉动阵列，之所以称为脉动，是因为在这种结构中，数据一波一波地流过芯片，与心脏跳动供血的方式类似。
 
@@ -310,7 +310,7 @@ Tensor Processing Unit ,中文名为张量处理器，2015年谷歌在IO开发�
 
 以寒武纪的DianNao架构为例简要介绍NPU
 
-![](D:/VSCode\blog_picture\DianNao.png)
+![](../..\blog_picture\DianNao.png)
 
 基于神经网络的人工智能算法，是模拟人类大脑内部神经元的结构，上图中的neuron代表单个神经元,synapse代表神经元的突触。
 

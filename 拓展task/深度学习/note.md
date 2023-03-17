@@ -1,6 +1,6 @@
 ReLU Function(Recitified Linear Unit)
-![](D:/VSCode\blog_picture\ReLU.png)
-![](D:/VSCode\blog_picture\Snn.png)
+![](../..\blog_picture\ReLU.png)
+![](../..\blog_picture\Snn.png)
 
 - input layer
 - hidden layer
@@ -11,12 +11,12 @@ Neural Network的几种分类
 - CNN
 - RNN
 - Customer and Hybrid NN
-![](D:/VSCode\bc\NNeg.png)
+![](../..\bc\NNeg.png)
 
 Supervised Learning 目前更多还是聚焦于非结构性数据上
 
 在数据量不断增大的过程中，不同算法的性能表现发展如图:
-![](D:/VSCode\blog_picture\pe.png)
+![](../..\blog_picture\pe.png)
 
 从上到下分别是大型神经网络、中型神经网络、小性神经网络、传统的学习算法
 
@@ -24,7 +24,7 @@ Supervised Learning 目前更多还是聚焦于非结构性数据上
 
 神经网络的一个重要突破就是激活函数从sigmoid函数转向ReLU函数，因为Sigmoid函数存在梯度消失现象
 
-![](D:/VSCode\blog_picture\sigmoid.png)
+![](../..\blog_picture\sigmoid.png)
 由图可以看到，在自变量趋于正无穷与负无穷时，梯度趋近于0
 
 ReLU函数替换Sigmoid函数可以使得梯度下降法
@@ -56,7 +56,7 @@ Y=$\left[\begin{matrix}y^{(1)}&y^{(2)}&y^{(3)}&y^{(m)}\end{matrix}\right]$表示
 但是这个输出的范围太大了，远超我们想要的[0,1]，所以我们想办法对其进行压缩，也就是$\sigma(\hat(y))$
 
 Sigmoid函数正好就是这样一个函数,他可以将线性的输出压缩到[0,1]中去
-![](D:/VSCode\blog_picture\sigmoid.png)
+![](../..\blog_picture\sigmoid.png)
 
 通常我们写的时候将$\omega$与b分开写，b为偏置项(inter-spectrum)
 
@@ -87,7 +87,7 @@ $J(\omega,b)=\frac{1}{m}\displaystyle\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})\\~~~~~
 
 梯度下降法(Gradient Descent)
 利用上述的损失函数，我们可以得到简化的函数图形
-![](D:/VSCode\blog_picture\gradient.png)
+![](../..\blog_picture\gradient.png)
 ==这里的简化指的是将$\omega$简化为了一维的实数==
 
 由图可知，该函数为凸函数(convex function)
@@ -105,13 +105,13 @@ $\omega :=\omega-\alpha\frac{\partial J(\omega,b)}{\partial\omega}\\b :=b-\alpha
 编写代码时，用"dw"表示$\frac{\partial J(\omega,b)}{\partial\omega}$，用"db"表示$\frac{\partial J(\omega,b)}{\partial b}$
 
 导数的直觉解释(intuitive understanding of derivative)
-![](D:/VSCode\blog_picture\derivative.png)
+![](../..\blog_picture\derivative.png)
 
 导数其实就是斜率，其实就是自变量变化$\Delta x$时，因变量会变化$\frac{\partial{f(x)}}{\partial{x}}$倍$\Delta x$
 
 ## 利用计算流程图表示Logistic逻辑回归算法:
 
-![](D:/VSCode\blog_picture\计算流程Logistic.png)
+![](../..\blog_picture\计算流程Logistic.png)
 
 ==Forward前向计算==:其实就是计算从输入到产生输出变量的过程
 

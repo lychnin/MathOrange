@@ -11,7 +11,7 @@ Git的版本库中存了很多东西，最重要的是暂存区(stage)，还有G
 
 git add实际是把文件修改添加到暂存区
 git commit 实际是把暂存区的内容提交到当前分支
-![](D:/VSCode\blog_picture\Git.png)
+![](../..\blog_picture\Git.png)
 ## 设置git用户名与邮箱：
 Command(命令):
 ==命令都在git bash 中输入==
@@ -58,7 +58,7 @@ git commit -m "message"
 git -m后面输入的是本次提交的说明，可以输入任何内容
 
 Response:
-![](D:/VSCode\blog_picture\commit.png)
+![](../..\blog_picture\commit.png)
 ==此处的[dev 8fe6b56]是本次提交的编号，sss是本次提交添加的message，下面一行是本次提交与原来版本的区别==
 
 git添加文件分为add、commit两步的原因:因为commit可以一次提交很多文件，所以可以多次add之后再提交
@@ -217,7 +217,7 @@ master分支应该非常稳定，用来发布新版本，平时在另一条测�
 
 团队中的每个人都可以从测试分支上拉取，推送。稳定版本发布在master上即可。
 
-![](D:/VSCode\blog_picture\strategy.png)
+![](../..\blog_picture\strategy.png)
 
 ### 分支合并类型
 合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。
@@ -227,10 +227,10 @@ master分支应该非常稳定，用来发布新版本，平时在另一条测�
 ### 创建与合并分支
 基本原理：
 其实HEAD指向的并不是提交，而是当前分支，当前分支若为master，则如下图所示：
-![](D:/VSCode\blog_picture\HEAD.png)
+![](../..\blog_picture\HEAD.png)
 
 创建新分支后，可以将HEAD指向新的分支:
-![](D:/VSCode\blog_picture\dev.png)
+![](../..\blog_picture\dev.png)
 Command:
 git branch <name>
 git checkout <name>
@@ -247,21 +247,21 @@ git switch <name>
 第六条：切换到已有的分支
 
 合并分支，就是将指定分支的指针指向要合并到的分支:
-![](D:/VSCode\blog_picture\merge.png)
+![](../..\blog_picture\merge.png)
 Command：
 git merge <name>
 效果:
 将指定分支切换到当前分支上
 
 合并后，可以删除指定合并的分支：
-![](D:/VSCode\blog_picture\del.png)
+![](../..\blog_picture\del.png)
 
 Command:
 git branch -d <name>
 
 ### 解决冲突
 当我们在两个分支上都进行了修改，Git就无法快速合并了，而是遇到了冲突。
-![](D:/VSCode\blog_picture\allchanged.png)
+![](../..\blog_picture\allchanged.png)
 
 此时合并遇到冲突，需要解决冲突后才能合并。
 
