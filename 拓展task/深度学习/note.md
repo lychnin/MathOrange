@@ -49,7 +49,7 @@ $X=\left[\begin{matrix}x^{(1)}&x^{(2)}&x^{(3)}&x^{(m)}\end{matrix}\right]$表示
 Y=$\left[\begin{matrix}y^{(1)}&y^{(2)}&y^{(3)}&y^{(m)}\end{matrix}\right]$表示将输入样本的所有输出标记向量作为列向量组成的m行1列的矩阵
 
 
-对于一个==二分类模型==来说,假设输入是一张照片，那么我们想要利用模型得到一个对目标的判断，==是1还是0==，或者得到它是1的概率$P(y=1|X)$
+对于一个<mark>二分类模型</mark>来说,假设输入是一张照片，那么我们想要利用模型得到一个对目标的判断，<mark>是1还是0</mark>，或者得到它是1的概率$P(y=1|X)$
 
 对于一个线性模型来说,有两个参数 $\omega\in R^{n_x}$ 和$b\in R$输出为$\hat{y}=\omega x+b$
 
@@ -68,7 +68,7 @@ Sigmoid函数正好就是这样一个函数,他可以将线性的输出压缩到
 
 为了让我们的模型尽可能精确,我们很容易想到均方误差最小化，也就是
 $L(\hat{y},y)=\frac{1}{2}(\hat{y}-y)^2$
-==这是一种很合理的思路，但是它无法使得梯度下降法工作得很好==
+<mark>这是一种很合理的思路，但是它无法使得梯度下降法工作得很好</mark>
 
 所以在logistic方法中，实际使用的损失函数(Loss Function)变为:
 $L(\hat{y},y)=-[y\log{\hat{y}}+(1-y)\log{(1-\hat{y})}]$
@@ -83,12 +83,12 @@ $L(\hat{y},y)=-[y\log{\hat{y}}+(1-y)\log{(1-\hat{y})}]$
 上述的Loss Function只是用来得出单个样本的输出与标签的损失，将所有的样本都容纳进来后，就形成了对整体损失的检测,也就是Cost Function
 $J(\omega,b)=\frac{1}{m}\displaystyle\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})\\~~~~~~~~~~~~~=-\frac{1}{m}\displaystyle\sum_{i=1}^m[y^{(i)}\log{\hat{y}^{(i)}}+(1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$
 
-==Logistic逻辑回归可以看作最小的神经网络==
+<mark>Logistic逻辑回归可以看作最小的神经网络</mark>
 
 梯度下降法(Gradient Descent)
 利用上述的损失函数，我们可以得到简化的函数图形
 ![](../..\blog_picture\gradient.png)
-==这里的简化指的是将$\omega$简化为了一维的实数==
+<mark>这里的简化指的是将$\omega$简化为了一维的实数</mark>
 
 由图可知，该函数为凸函数(convex function)
 
@@ -113,20 +113,20 @@ $\omega :=\omega-\alpha\frac{\partial J(\omega,b)}{\partial\omega}\\b :=b-\alpha
 
 ![](../..\blog_picture\计算流程Logistic.png)
 
-==Forward前向计算==:其实就是计算从输入到产生输出变量的过程
+<mark>Forward前向计算</mark>:其实就是计算从输入到产生输出变量的过程
 
-==Backward后向计算==:其实就是求导的过程,因为求的是输出变量对各个中间变量或者输入变量的导数，所以方向是从后向前的，所以称为后向计算
+<mark>Backward后向计算</mark>:其实就是求导的过程,因为求的是输出变量对各个中间变量或者输入变量的导数，所以方向是从后向前的，所以称为后向计算
 
 编码时，我们常用$d~var$表示$\frac{d~FinalOutputVar}{d~var}$
 
 这里以求$d ~\omega_1$为例:
 $d~\omega_1=\frac{\partial L(a,y)}{\partial a}\times \frac{\partial a}{\partial z}\times \frac{\partial z}{\partial \omega_1}=\frac{\partial L(a,y)}{\partial \omega_1}$
-最终因变量对自变量的导数，通过对中间变量导数的乘积得到，这是==链式法则==
+最终因变量对自变量的导数，通过对中间变量导数的乘积得到，这是<mark>链式法则</mark>
 $d~a=\frac{\partial L(a,y)}{\partial a}=\frac{a-y}{a(1-a)}$
 $d~z=\frac{\partial L(a,y)}{\partial a}\times\frac{\partial a}{\partial z}=\frac{\partial L(a,y)}{\partial z}=\frac{a-y}{a(1-a)}\times a(1-a)=a-y$
 $d~\omega_1=\frac{\partial L(a,y)}{\partial a}\times \frac{\partial a}{\partial z}\times \frac{\partial z}{\partial \omega_1}=\frac{\partial L(a,y)}{\partial \omega_1}=d~z\times x_1=(a-y)x_1$
 
-计算出梯度后，需要进行梯度下降处理，也就是对于变量利用梯度进行更新,==更新的是变量，更新的方向是梯度方向==:
+计算出梯度后，需要进行梯度下降处理，也就是对于变量利用梯度进行更新,<mark>更新的是变量，更新的方向是梯度方向</mark>:
 $\omega_1:=\omega_1-\alpha\times d~\omega_1$
 $\omega_2:=\omega_2-\alpha\times d~\omega_2$
 $\omega_1:=b-\alpha\times d~b$
@@ -164,7 +164,7 @@ CPU与GPU都可以进行并行化计算，只不过GPU更加擅长，这种单�
 
 $b=[b ~~b~~b~~b……b]$
 $z=[z^{(1)}~~z^{(2)}~~z^{(3)}……z^{(m)}]\\~~~=[w^Tx^{(1)}+b~~w^Tx^{(2)}+b~~w^Tx^{(3)}+b……w^Tx^{(m)}+b]\\~~~=np.dot(w.T,X)+b$
-这里的最后一行是用Python代码表示的，这里加一个b，相当于加了一个元素全为b的一维数组，这是==Python的广播机制(broadcasting)==。
+这里的最后一行是用Python代码表示的，这里加一个b，相当于加了一个元素全为b的一维数组，这是<mark>Python的广播机制(broadcasting)</mark>。
 
 $dz=[dz^{(1)}~dz^{(2)}~dz^{(3)}……dz^{(m)}]$
 $A=[a^{(1)}~a^{(2)}……a^{(m)}]$
@@ -175,7 +175,7 @@ $dw=\frac{1}{m}X_{n_x\cdot m}dz^T\\~~~~~=\frac{1}{m}\left[\begin{matrix}x^{(1)}&
 
 使用向量化后的伪代码:
 $z=np.dot(w.T,x)+b\\A=\sigma(z)\\dz=A-Y\\dw=\frac{1}{m}Xdz^T\\db=\frac{1}{m}np.sum(dz)\\w:=w-\alpha dw\\b:=b-\alpha db$
-==可以看到简化了很多==
+<mark>可以看到简化了很多</mark>
 但是在迭代时，还需要for-loop进行迭代次数的指定
 
 Python的广播机制:
