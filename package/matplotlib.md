@@ -14,3 +14,10 @@ fig_kw：额外的参数
 返回：
 fig：画布
 ax：返回一个轴对象或者一个轴对象的数组
+
+%matplotlib inline作用:
+表示把图表嵌入笔记中，使用 %matplotlib inline
+
+backend和frontend
+matplotlib在完成各种绘图输出时，用户面向的代码是frontend，而在幕后完成那些复杂工作的是backend。
+
