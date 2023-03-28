@@ -5,7 +5,7 @@
 
 .npz格式是持久化很多numpy数组到磁盘的标准格式。
 
-一个.npz格式可以包括很多个.npz文件。
+一个.npz格式可以包括很多个.npy文件。
 
 ## pickle objects
 pickle objects模块实现是对Python对象的序列化和反序列化的二进制协议。
@@ -20,7 +20,7 @@ pickle也可以被称为序列化、编组、扁平化等等。
 parameters:
 file ：必须包含seek()和read()方法。序列化文件需要包括readline()方法。
 
-mmap-mode：memory-map mode，使用给定的内存映射模式。内存映射对于访问大文件的小片段的小片段而不将整个文读入内存特别有用。
+mmap-mode：memory-map mode，使用给定的内存映射模式。内存映射对于访问大文件的小片段而不将整个文读入内存特别有用。
 
 allow_pickle:允许加载数据存储为npy文件，可能因为安全性等原因禁用，但是禁用的话就会加载数据失败。
 

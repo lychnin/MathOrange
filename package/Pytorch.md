@@ -27,6 +27,19 @@ NHWC是先取C方向，然后W方向，再H方向，最后N方向
 以RGB图像为例
 ![](../..\blog_picture\RGB-nchw.png)
 
+
+## nn.Conv2d()
+parameter:
+in_channels：输入的通道数
+out_channels:输出的通道数
+kernel_size:使用的卷积大小，一般使用3*3或者5*5，输入3/5即可，如果使用3*5则输入(3,5)
+stride：步长，卷积核每次平移的间隔
+padding：图像的填充，后面的int型常数代表填充多少，包括上下左右
+dilation：是否使用空洞卷积,默认为1不采用
+groups：是否使用分组卷积
+bias：是否添加偏置参数作为可学习参数的一个
+padding_mode：填充的模式，默认采用0填充
+
 ### tensor.mean()
 可以计算不同维度的均值
 ## TensorFlow
@@ -454,3 +467,10 @@ PyTorch中的神经网络构造一般是基于nn.moudle类的模型来完成的�
 
 Moudle类是torch.nn模块里提供的一个模型构造类，是所有神经网络模块的基类，我们可以继承它来定义我们想要的模型。
 
+### view
+可以重塑一个张量的形状，只适用于满足连续性条件的tensor，并且该操作不会开辟新的内存空间，只是对原存储空间的一个新别称和引用，返回值是视图。
+
+reshape则返回的可以是视图也可以是副本，当满足连续性条件时返回view，不满足时返回副本。
+
+### nn.Embedding
+将单词转化为向量表示，但不同于one-hot encoding
