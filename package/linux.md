@@ -6,3 +6,4 @@ vi /etc/hosts
 cp 当前路径(如果在目录下可以省略一些父目录) 目标路径
 解压文件夹:
 tar zxvf xxx
+
